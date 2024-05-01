@@ -7,7 +7,6 @@ def get_github_repositories(organization_name):
         response = requests.get(base_url)
         response.raise_for_status()  # Check for errors in the HTTP response
         repositories = response.json()
-        
         # Extract repository names
         repo_data = [{'name': repo['name'], 'branches_url': repo['branches_url']} for repo in repositories]
         
